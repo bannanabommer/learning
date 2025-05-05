@@ -1,6 +1,9 @@
+'use client'
+
+import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
-export default function Page() {
+export default function GuessMyNumber() {
     useEffect(() => {guessmynumber()},)
     const [lastguess, setLastGuess] = useState<null|number>(null)
     const [smallerlimit, setsmallerlimit] = useState(0)
@@ -31,15 +34,10 @@ export default function Page() {
 
     return(<>
         <h1>I Guess Your Number</h1>
-        <div>
-            small: {smallerlimit}
-            <br />
-            bigg: {biggerlimit}
-        </div>
         <div>your number is : {lastguess}</div>
         <div>
-            <button onClick={handleSmallerClick}>smaller</button>
-            <button onClick={handleBiggerClick}>bigger</button>
+            <Button type="button" onClick={handleSmallerClick}>smaller</Button>
+            <Button type="button" onClick={handleBiggerClick}>bigger</Button>
         </div>
     </>)
 }

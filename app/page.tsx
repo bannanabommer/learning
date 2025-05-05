@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       width={175}
       height={175}
       alt="ultimate cheese"></Image>
+      <Link href="/guess-my-number" >Guess My Number</Link>
     </>
   );
 }
