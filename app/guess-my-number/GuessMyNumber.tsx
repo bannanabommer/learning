@@ -32,12 +32,26 @@ export default function GuessMyNumber() {
         guessmynumber()
     }
 
-    return(<>
-        <h1>I Guess Your Number</h1>
-        <div>your number is : {lastguess}</div>
-        <div>
-            <Button type="button" onClick={handleSmallerClick}>smaller</Button>
-            <Button type="button" onClick={handleBiggerClick}>bigger</Button>
+    return(
+    <>
+        <div className="grid grid-cols-3 gap-3">
+            <div></div>
+
+            <div>
+                <h1 className ="font-bold text-5xl"   >I Guess Your Number</h1>
+                <div>your number is : {lastguess}</div>
+            </div>
+            
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            
+            <div className="grid grid-cols-2 gap-2">
+                <Button type="button" onClick={handleSmallerClick}>smaller</Button>
+                <Button type="button" onClick={handleBiggerClick}>bigger</Button>
+            </div>
         </div>
     </>)
 }
