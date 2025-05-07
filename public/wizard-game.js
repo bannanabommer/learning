@@ -114,3 +114,13 @@ function walk (direction){
   playerlocation = path.to
   return look() 
 }
+function pick_up (thing){
+  const mything = thinglocations.find((chickenplane) =>chickenplane.thing === thing ) 
+  mything.location = "body"
+  return `you carry the ${thing} now.`
+}
+
+function invetory (){
+    return thingsat("body")
+
+}
