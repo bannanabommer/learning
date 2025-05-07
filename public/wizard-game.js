@@ -43,7 +43,7 @@ const attic_passes = {
         }
     ]
 }
-passes = [living_room_passes, garden_passes, attic_passes]
+const passes = [living_room_passes, garden_passes, attic_passes]
 
 
 function discribelocation(locationToDescribe)
@@ -68,7 +68,7 @@ function discribepathes(location) {
         }
     }
 }
-// objects = [whiskey,bucket,frog,chain]
+
 const thinglocations = [
     {thing: "wiskey",
      location: "living-room"},
@@ -107,4 +107,10 @@ function look (){
 
     return locationdesc + thingsdesc + pathesdesc
      
+}
+function walk (direction){
+  const playerpath = passes.find ((chickenplane) => chickenplane.from === playerlocation)
+  const path = playerpath.pathes.find ((chickenplane)=> chickenplane.direction === direction)
+  playerlocation = path.to
+  return look() 
 }
