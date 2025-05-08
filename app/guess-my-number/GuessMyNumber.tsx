@@ -7,7 +7,7 @@ export default function GuessMyNumber() {
     useEffect(() => {guessmynumber()},)
     const [lastguess, setLastGuess] = useState<null|number>(null)
     const [smallerlimit, setsmallerlimit] = useState(0)
-    const [biggerlimit, setbiggerLimit] = useState(100)
+    const [biggerlimit, setbiggerLimit] = useState(10000)
 
     function guessmynumber(){ 
         let additionResult = (smallerlimit + biggerlimit)
