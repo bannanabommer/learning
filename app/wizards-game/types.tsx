@@ -1,4 +1,4 @@
-export type PlaceName = "garden" | "living-room" | "attic" | "body" | "anoubis"
+export type PlaceName = "garden" | "living-room" | "attic" | "body" | "anoubis" | "the ether"
 
 export type Direction = "up" | "down" | "west" | "east"
 

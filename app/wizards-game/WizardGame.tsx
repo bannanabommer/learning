@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Direction, Place, PlaceName, Thing } from "./types"
-import { discribepathes, discribeplace, discribethings, fill, have, thingsat, weld } from "./functions"
+import { discribepathes, discribeplace, discribethings, fill, have, promptTheEnd, thingsat, weld } from "./functions"
 import { places, thingplaces } from "./constants"
 import { Button } from "@/components/ui/button"
 
@@ -32,6 +32,9 @@ export default function WizardGame() {
     const mything = thingplaces.find((chickenplane) => chickenplane.thing === thing)! 
     mything.place = "body"
     setInventory(thingsat("body", thingplaces))
+    setPrompt("You picked up a " + thing)
+
+    setTimeout(() => setPrompt(look()), 800)
   }
 
   function canWeld() {
@@ -44,6 +47,9 @@ export default function WizardGame() {
   function weldInAttic() {
     weld(thingplaces)
     setInventory(thingsat("body", thingplaces))
+    setPrompt("You welded the chain to the bucket.")
+
+    setTimeout(() => setPrompt(look()), 800)
   }
 
   function can_fill(){
@@ -51,9 +57,27 @@ export default function WizardGame() {
     && !have("filled bucket", thingplaces) 
     && playerlocation === "garden"
   }
+
   function fillingarden(){
     fill(thingplaces)
     setInventory(thingsat("body", thingplaces))
+    setPrompt("You portaled the welded bucket to annoubis and received a full bucket, with seemingly water.")
+
+    setTimeout(() => setPrompt(look()), 800)
+  }
+
+  function cansplash (){
+    return have("filled bucket", thingplaces)
+    && playerlocation === "living-room"
+  }
+
+  function splash ()
+  {
+     const theEnd: string = promptTheEnd(thingplaces)
+     setPrompt(theEnd)
+
+     setTimeout(() => setPrompt("THE END"), 1000)
+
   }
 
   return (
@@ -92,6 +116,9 @@ export default function WizardGame() {
                   : <></>}
                 {can_fill() 
                   ? (<Button key={'fill'} onClick={fillingarden}>fill bucket</Button>)
+                  : <></>}
+                  {cansplash() 
+                  ? (<Button key={'splash'} onClick={splash}>splash the wizard</Button>)
                   : <></>}
               </div>
             </div>

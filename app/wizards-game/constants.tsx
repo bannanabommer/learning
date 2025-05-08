@@ -37,7 +37,12 @@ export const places: Place[] = [
               direction: "down",
           }
       ]
-  }
+  },
+{
+  name:"the ether",
+  description: "the end ",
+pathes: []
+}
 ]
 
 export const thingplaces: ThingPlace[] = [

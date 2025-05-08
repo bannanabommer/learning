@@ -66,6 +66,15 @@ const weldedbucket = get ("welded bucket", thingplaces)
 weldedbucket.place = "anoubis"
 filledbucket.place = "body"
 }
+
+function promptTheEnd(thingplaces: ThingPlace[]): string{
+  
+  if (have ("frog", thingplaces)){ return "the wizard wakes up and calls you a thief an you explode"}
+  else {return "the wizard wakes up and gives you a ultimate piece of cheese"}
+  
+
+}
+
 export {
   discribeplace,
   discribepathes,
@@ -73,5 +82,6 @@ export {
   discribethings,
   have,
   weld,
-  fill
+  fill,
+  promptTheEnd
 }
