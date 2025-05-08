@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <script type="text/javascript" src="/guess-number.js" />
       <h1>Cheese of sil</h1>
-      <RotatingCheeseWheel imageUrl="/goatCheeseWheel.webp" />
+      <RotatingCheeseWheel imageUrl="/GoatCheeseWheel.webp" />
       <Link href="/guess-my-number" >Guess My Number</Link>
     </>
   );
