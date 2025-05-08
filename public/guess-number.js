@@ -1,7 +1,7 @@
 console.log("WHAAAT!")
 
 let lastguess = 0
-let biggerlimit = 100
+let biggerlimit = 10000
 let smallerlimit = 1
 
 function guessmynumber(){ 
