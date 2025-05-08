@@ -52,4 +52,12 @@ export const thingplaces: ThingPlace[] = [
 
   { thing: "frog",
     place: "garden"},
+
+  { thing: "welded bucket" ,
+    place: "anoubis" },
+
+    { thing: "filled bucket",
+      place: "anoubis" }, 
+
+
 ] 

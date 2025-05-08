@@ -36,9 +36,42 @@ function discribethings(placename: PlaceName, thingplaces: ThingPlace[]): string
   return result
 }
 
+function get(thing: Thing, thingplaces: ThingPlace[]): ThingPlace {
+  return thingplaces.find ((chickenplane)=> chickenplane.thing === thing)!
+}
+
+function have(thing: Thing, thingplaces: ThingPlace[]){
+  
+  const thingplace = get(thing, thingplaces)
+
+  return thingplace.place === "body"
+  
+}
+
+function weld (thingplaces: ThingPlace[]){
+  console.log("welding")
+  const bucketplace = get ("bucket", thingplaces)
+  const chainplace = get ("chain", thingplaces)
+  const weldedbucket = get ("welded bucket", thingplaces)
+  
+  bucketplace.place = "anoubis"
+  chainplace.place = "anoubis"
+  weldedbucket.place ="body"
+} 
+
+
+function fill (thingplaces: ThingPlace[]){
+const filledbucket = get ("filled bucket", thingplaces)
+const weldedbucket = get ("welded bucket", thingplaces)
+weldedbucket.place = "anoubis"
+filledbucket.place = "body"
+}
 export {
   discribeplace,
   discribepathes,
   thingsat,
-  discribethings
+  discribethings,
+  have,
+  weld,
+  fill
 }

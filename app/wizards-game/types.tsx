@@ -1,8 +1,8 @@
-export type PlaceName = "garden" | "living-room" | "attic" | "body"
+export type PlaceName = "garden" | "living-room" | "attic" | "body" | "anoubis"
 
 export type Direction = "up" | "down" | "west" | "east"
 
-export type Thing = "wiskey" | "bucket" | "chain" | "frog"
+export type Thing = "wiskey" | "bucket" | "chain" | "frog" | "welded bucket" | "filled bucket"
 
 export interface Path {
   to: PlaceName
